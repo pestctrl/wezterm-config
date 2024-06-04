@@ -20,9 +20,11 @@ config.keys = {
     { key = '.', mods = 'CTRL', action = emacs_keys.SendEmacs("C-.") },
     { key = ',', mods = 'CTRL', action = emacs_keys.SendEmacs("C-,") },
     { key = ' ', mods = 'CTRL', action = emacs_keys.SendEmacs("C-SPC") },
+    { key = ' ', mods = 'ALT', action = emacs_keys.SendEmacs("M-SPC"), },
     { key = '/', mods = 'CTRL', action = emacs_keys.SendEmacs("C-/") },
     { key = 'Backspace', mods = 'CTRL', action = emacs_keys.SendEmacs("C-<backspace>") },
-    { key = 'Enter', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
+    -- { key = 'Enter', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
+    { key = 'F11', action = wezterm.action.ToggleFullScreen },
     -- This needs to be disabled some other way
     -- { key = ' ', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
 }
