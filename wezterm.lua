@@ -14,6 +14,7 @@ config.font = wezterm.font_with_fallback({
     { family = "FiraCode Nerd Font Mono", --[[ scale = 0.9 --]] }
 })
 config.font_size = 10
+-- config.disable_default_key_bindings = true
 
 config.keys = {
     { key = '.', mods = 'CTRL', action = emacs_keys.SendEmacs("C-.") },
