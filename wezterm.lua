@@ -33,6 +33,8 @@ config.keys = {
     { key = 'Backspace', mods = 'CTRL', action = emacs_keys.SendEmacs("C-<backspace>") },
     { key = 'Enter', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
     { key = 'F11', action = wezterm.action.ToggleFullScreen },
+    { key = 'Home', action = wezterm.action.SendKey { key = 'a', mods = 'CTRL'} },
+    { key = 'End', action = wezterm.action.SendKey { key = 'e', mods = 'CTRL'} },
     -- This needs to be disabled some other way
     -- { key = ' ', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
 }
