@@ -15,6 +15,14 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 10
 -- config.disable_default_key_bindings = true
+config.hide_tab_bar_if_only_one_tab = true
+
+config.window_padding = {
+    left = 2,
+    right = 2,
+    top = 0,
+    bottom = 0,
+}
 
 config.keys = {
     { key = '.', mods = 'CTRL', action = emacs_keys.SendEmacs("C-.") },
