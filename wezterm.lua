@@ -11,8 +11,10 @@ config.debug_key_events = true
 
 config.font = wezterm.font_with_fallback({
     { family = "Roboto Mono", --[[ scale = 0.8 --]] },
-    { family = "FiraCode Nerd Font Mono", --[[ scale = 0.9 --]] }
+    "Noto Color Emoji",
+    { family = "Symbols Nerd Font Mono", scale = 1.1 },
 })
+-- config.use_cap_height_to_scale_fallback_fonts = true
 config.font_size = 10
 -- config.disable_default_key_bindings = true
 config.hide_tab_bar_if_only_one_tab = true
