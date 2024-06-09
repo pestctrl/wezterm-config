@@ -26,12 +26,35 @@ config.window_padding = {
     bottom = 0,
 }
 
+local launch_menu = {}
+
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	table.insert(launch_menu, {
+		label = "Windows Subsystem for Linux",
+		args = { "wsl.exe" },
+	})
+	table.insert(launch_menu, {
+		label = "MSYS UCRT64",
+		args = { "cmd.exe ", "/k", "C:\\msys64\\msys2_shell.cmd -defterm -here -no-start -shell bash" },
+	})
+	table.insert(launch_menu, {
+		label = "Command Prompt",
+		args = { "cmd.exe " },
+	})
+    config.default_prog = { "wsl.exe" }
+end
+
+config.launch_menu = launch_menu
+
 config.keys = {
     { key = '.', mods = 'CTRL', action = emacs_keys.SendEmacs("C-.") },
     { key = ',', mods = 'CTRL', action = emacs_keys.SendEmacs("C-,") },
     { key = ' ', mods = 'CTRL', action = emacs_keys.SendEmacs("C-SPC") },
     { key = ' ', mods = 'ALT', action = emacs_keys.SendEmacs("M-SPC"), },
     { key = '/', mods = 'CTRL', action = emacs_keys.SendEmacs("C-/") },
+    { key = '0', mods = 'CTRL|ALT', action = wezterm.action.ShowLauncher },
+    { key = '1', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(-1) },
+    { key = '2', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(1) },
     { key = 'Backspace', mods = 'CTRL', action = emacs_keys.SendEmacs("C-<backspace>") },
     { key = 'Enter', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
     { key = 'Enter', mods = 'CTRL', action = emacs_keys.SendEmacs("C-<return>"), },
