@@ -26,6 +26,10 @@ config.window_padding = {
     bottom = 0,
 }
 
+config.colors = {
+    background = '#141414',
+}
+
 local launch_menu = {}
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
