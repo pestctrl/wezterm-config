@@ -62,6 +62,7 @@ config.keys = {
     { key = 'Backspace', mods = 'CTRL', action = emacs_keys.SendEmacs("C-<backspace>") },
     { key = 'Enter', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
     { key = 'Enter', mods = 'CTRL', action = emacs_keys.SendEmacs("C-<return>"), },
+    { key = 'Enter', mods = 'ALT|SHIFT', action = emacs_keys.SendEmacs("C-S-<return>"), },
     { key = 'F11', action = wezterm.action.ToggleFullScreen },
     { key = 'Home', action = wezterm.action.SendKey { key = 'a', mods = 'CTRL'} },
     { key = 'End', action = wezterm.action.SendKey { key = 'e', mods = 'CTRL'} },
