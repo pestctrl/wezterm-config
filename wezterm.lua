@@ -51,22 +51,27 @@ end
 config.launch_menu = launch_menu
 
 config.keys = {
+    -- Tab Launcher
+    { key = '0', mods = 'CTRL|ALT', action = wezterm.action.ShowLauncher },
+    { key = '1', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(-1) },
+    { key = '2', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(1) },
+    { key = 'Enter', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
+    { key = 'F11', action = wezterm.action.ToggleFullScreen },
+
+    -- Emacs Idioms
+    { key = 'Home', action = wezterm.action.SendKey { key = 'a', mods = 'CTRL'} },
+    { key = 'End', action = wezterm.action.SendKey { key = 'e', mods = 'CTRL'} },
+
+    -- Terminal key compatibility
     { key = '.', mods = 'CTRL', action = emacs_keys.SendEmacs("C-.") },
     { key = ',', mods = 'CTRL', action = emacs_keys.SendEmacs("C-,") },
     { key = ' ', mods = 'CTRL', action = emacs_keys.SendEmacs("C-SPC") },
     { key = ' ', mods = 'ALT', action = emacs_keys.SendEmacs("M-SPC"), },
     { key = '/', mods = 'CTRL', action = emacs_keys.SendEmacs("C-/") },
-    { key = '0', mods = 'CTRL|ALT', action = wezterm.action.ShowLauncher },
-    { key = '1', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(-1) },
-    { key = '2', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(1) },
     { key = 'Backspace', mods = 'CTRL', action = emacs_keys.SendEmacs("C-<backspace>") },
-    { key = 'Enter', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
     { key = 'Enter', mods = 'CTRL', action = emacs_keys.SendEmacs("C-<return>"), },
     { key = 'Enter', mods = 'ALT|SHIFT', action = emacs_keys.SendEmacs("M-S-<return>"), },
     { key = 'Enter', mods = 'CTRL|SHIFT', action = emacs_keys.SendEmacs("C-S-<return>"), },
-    { key = 'F11', action = wezterm.action.ToggleFullScreen },
-    { key = 'Home', action = wezterm.action.SendKey { key = 'a', mods = 'CTRL'} },
-    { key = 'End', action = wezterm.action.SendKey { key = 'e', mods = 'CTRL'} },
     -- This needs to be disabled some other way
     -- { key = ' ', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
 }
