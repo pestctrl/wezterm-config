@@ -45,7 +45,7 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 		label = "Command Prompt",
 		args = { "cmd.exe " },
 	})
-    config.default_prog = { "wsl.exe" }
+    config.default_prog = { "cmd.exe" }
 end
 
 config.launch_menu = launch_menu
