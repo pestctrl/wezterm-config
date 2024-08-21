@@ -1,1 +1,1 @@
-* On Windows, this belongs in C:\Users\<USER>\.config\wezterm\wezterm.lua
+* On Windows, this belongs in C:\Users\<USER>\\.config\wezterm\wezterm.lua
