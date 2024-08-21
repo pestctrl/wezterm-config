@@ -55,6 +55,8 @@ config.keys = {
     { key = '0', mods = 'CTRL|ALT', action = wezterm.action.ShowLauncher },
     { key = '1', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(-1) },
     { key = '2', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(1) },
+    { key = '7', mods = 'CTRL|ALT', action = wezterm.action.DecreaseFontSize },
+    { key = '8', mods = 'CTRL|ALT', action = wezterm.action.IncreaseFontSize },
     { key = 'Enter', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
     { key = 'F11', action = wezterm.action.ToggleFullScreen },
 
