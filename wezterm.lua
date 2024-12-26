@@ -50,7 +50,36 @@ end
 
 config.launch_menu = launch_menu
 
+config.key_tables = {
+    copy_mode = {
+        -- wezterm show-keys --lua --key-table copy_mode
+        { key = 'Space', mods = 'CTRL', action = wezterm.action.CopyMode { SetSelectionMode = 'Cell' } },
+        { key = 'Space', mods = 'NONE', action = wezterm.action.CopyMode { SetSelectionMode = 'Block' } },
+
+        { key = 'n', mods = 'CTRL', action = wezterm.action.CopyMode 'MoveDown' },
+        { key = 'p', mods = 'CTRL', action = wezterm.action.CopyMode 'MoveUp' },
+        { key = 'f', mods = 'CTRL', action = wezterm.action.CopyMode 'MoveRight' },
+        { key = 'f', mods = 'ALT', action = wezterm.action.CopyMode 'MoveForwardWord' },
+        { key = 'b', mods = 'CTRL', action = wezterm.action.CopyMode 'MoveLeft' },
+        { key = 'b', mods = 'ALT', action = wezterm.action.CopyMode 'MoveBackwardWord' },
+        { key = 'g', mods = 'CTRL', action = wezterm.action.CopyMode 'Close' },
+
+        { key = 'a', mods = 'CTRL', action = act.CopyMode 'MoveToStartOfLine' },
+        { key = 'e', mods = 'CTRL', action = act.CopyMode 'MoveToEndOfLineContent' },
+
+        -- { key = 'w', mods = 'ALT', action = act.CopyTo 'Clipboard' },
+        { key = 'w', mods = 'ALT', action = act.Multiple { { CopyTo =  'ClipboardAndPrimarySelection' }, { CopyMode =  'Close' } } },
+    }
+}
+
 config.keys = {
+    -- wezterm show-keys --lua
+    -- Wezterm Features
+    { key = 'Space', mods = 'ALT', action = wezterm.action.SendKey { key = 'Space', mods = 'ALT' } },
+
+    { key = 'x', mods = 'CTRL|ALT', action = wezterm.action.DisableDefaultAssignment },
+    { key = 's', mods = 'CTRL|SHIFT', action = wezterm.action.ActivateCopyMode },
+    
     -- Tab Launcher
     { key = '0', mods = 'CTRL|ALT', action = wezterm.action.ShowLauncher },
     { key = '1', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(-1) },
