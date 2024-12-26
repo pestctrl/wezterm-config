@@ -64,11 +64,11 @@ config.key_tables = {
         { key = 'b', mods = 'ALT', action = wezterm.action.CopyMode 'MoveBackwardWord' },
         { key = 'g', mods = 'CTRL', action = wezterm.action.CopyMode 'Close' },
 
-        { key = 'a', mods = 'CTRL', action = act.CopyMode 'MoveToStartOfLine' },
-        { key = 'e', mods = 'CTRL', action = act.CopyMode 'MoveToEndOfLineContent' },
+        { key = 'a', mods = 'CTRL', action = wezterm.action.CopyMode 'MoveToStartOfLine' },
+        { key = 'e', mods = 'CTRL', action = wezterm.action.CopyMode 'MoveToEndOfLineContent' },
 
-        -- { key = 'w', mods = 'ALT', action = act.CopyTo 'Clipboard' },
-        { key = 'w', mods = 'ALT', action = act.Multiple { { CopyTo =  'ClipboardAndPrimarySelection' }, { CopyMode =  'Close' } } },
+        -- { key = 'w', mods = 'ALT', action = wezterm.action.CopyTo 'Clipboard' },
+        { key = 'w', mods = 'ALT', action = wezterm.action.Multiple { { CopyTo =  'ClipboardAndPrimarySelection' }, { CopyMode =  'Close' } } },
     }
 }
 
