@@ -7,7 +7,7 @@ local config = {}
 -- Use config builder object if possible
 if wezterm.config_builder then config = wezterm.config_builder() end
 
-config.debug_key_events = true
+-- config.debug_key_events = true
 
 config.font = wezterm.font_with_fallback({
     { family = "Roboto Mono", --[[ scale = 0.8 --]] },
@@ -47,6 +47,9 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	})
     config.default_prog = { "cmd.exe" }
 end
+
+config.allow_win32_input_mode = false
+-- config.enable_kitty_keyboard = true
 
 config.launch_menu = launch_menu
 
@@ -94,15 +97,15 @@ config.keys = {
     { key = 'End', action = wezterm.action.SendKey { key = 'e', mods = 'CTRL'} },
 
     -- Terminal key compatibility
-    { key = '.', mods = 'CTRL', action = emacs_keys.SendEmacs("C-.") },
-    { key = ',', mods = 'CTRL', action = emacs_keys.SendEmacs("C-,") },
-    { key = ' ', mods = 'CTRL', action = emacs_keys.SendEmacs("C-SPC") },
-    { key = ' ', mods = 'ALT', action = emacs_keys.SendEmacs("M-SPC"), },
-    { key = '/', mods = 'CTRL', action = emacs_keys.SendEmacs("C-/") },
+    -- { key = '.', mods = 'CTRL', action = emacs_keys.SendEmacs("C-.") },
+    -- { key = ',', mods = 'CTRL', action = emacs_keys.SendEmacs("C-,") },
+    -- { key = ' ', mods = 'CTRL', action = emacs_keys.SendEmacs("C-SPC") },
+    -- { key = ' ', mods = 'ALT', action = emacs_keys.SendEmacs("M-SPC"), },
+    -- { key = '/', mods = 'CTRL', action = emacs_keys.SendEmacs("C-/") },
+    -- { key = 'Enter', mods = 'CTRL', action = emacs_keys.SendEmacs("C-<return>"), },
+    -- { key = 'Enter', mods = 'CTRL|SHIFT', action = emacs_keys.SendEmacs("C-S-<return>"), },
     { key = 'Backspace', mods = 'CTRL', action = emacs_keys.SendEmacs("C-<backspace>") },
-    { key = 'Enter', mods = 'CTRL', action = emacs_keys.SendEmacs("C-<return>"), },
     { key = 'Enter', mods = 'ALT|SHIFT', action = emacs_keys.SendEmacs("M-S-<return>"), },
-    { key = 'Enter', mods = 'CTRL|SHIFT', action = emacs_keys.SendEmacs("C-S-<return>"), },
     -- This needs to be disabled some other way
     -- { key = ' ', mods = 'ALT', action = wezterm.action.DisableDefaultAssignment, },
 }
